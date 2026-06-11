@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1440">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>자린고비 — 제작 과정 포트폴리오</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -26,16 +26,20 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{font-family:'Pretendard',sans-serif;}
+  html,body{overflow-x:hidden;}
   body{background:#e9e2d2;color:var(--ink);-webkit-font-smoothing:antialiased;}
-  .stage{position:relative;width:1440px;height:15657px;margin:0 auto;
-         background:var(--beige);overflow:hidden;}
+  /* 반응형: 1440 기준, 창 너비에 맞춰 스케일(최대 1.333배=1920), 좌우 중앙 정렬 */
+  #frame{position:relative;width:100%;}
+  .stage{position:absolute;left:50%;margin-left:-720px;top:0;
+         width:1440px;height:18257px;
+         background:var(--beige);overflow:hidden;transform-origin:top center;}
   .abs{position:absolute;}
   img.abs{display:block;}
 
   /* 타이포 위계 (전부 Pretendard) */
-  .eyebrow{font-weight:800;letter-spacing:.2em;color:#3a372f;
+  .eyebrow{font-weight:800;letter-spacing:.08em;color:#3a372f;
            text-align:center;font-size:16px;}
-  .pill{font-weight:700;color:#4a5816;background:#E8D7BB;border-radius:14px;
+  .pill{font-weight:700;color:#4a5816;background:#E8D7BB;border-radius:999px;
         display:inline-block;padding:9px 26px;font-size:22px;letter-spacing:.04em;}
   .h-title{font-weight:700;color:var(--title);line-height:1.36;letter-spacing:-.01em;}
   .desc{font-weight:400;color:var(--ink-soft);line-height:1.62;font-size:15px;
@@ -45,7 +49,11 @@
 </style>
 </head>
 <body>
+<div id="frame">
 <div class="stage">
+  <!-- 섹션 간격 채움: OVERVIEW 언덕↔RESEARCH 초록 연결 (나머지 갭은 stage 베이지가 채움) -->
+  <div class="abs" style="left:0;top:1951px;width:1440px;height:200px;background:#AFB59A;"></div>
+
 
   <!-- ===================== 1. COVER (0–839) ===================== -->
   <img class="abs" src="images/cover-bg.png" style="left:-22px;top:0;width:1484px;height:839px;">
@@ -55,51 +63,54 @@
     <span style="position:absolute;left:1177px;">My Role 70%</span>
   </div>
   <!-- 배지 -->
-  <div class="abs center" style="left:623px;top:223px;width:520px;height:71px;background:#FBF4EA;border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(150,80,20,.12);">
-    <span style="font-weight:700;color:#5a6149;font-size:26px;">건강한 소비 습관, 시작은 여기서!</span>
+  <div class="abs center" style="left:623px;top:223px;width:520px;height:71px;background:#A2480C;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(120,55,10,.18);">
+    <span style="font-weight:700;color:#FFFBF7;font-size:26px;">건강한 소비 습관, 시작은 여기서!</span>
   </div>
   <div class="abs center" style="left:664px;top:547px;width:476px;font-weight:600;font-size:23px;color:#5a6149;">소비는 줄이고, 행복은 키우는 스마트한 습관</div>
 
   <!-- ===================== 2. OVERVIEW (839–1751) ===================== -->
-  <img class="abs" src="images/overview-bg.png" style="left:0;top:948px;width:1440px;height:803px;">
-  <div class="abs eyebrow" style="left:600px;top:958px;width:240px;">OVERVIEW</div>
-  <div class="abs center" style="left:359px;top:1000px;width:721px;font-size:38px;font-weight:700;color:#3d3a33;letter-spacing:-.02em;">아끼는 하루가 쌓여 내일의 나를 바꾼다</div>
-  <div class="abs center" style="left:420px;top:1088px;width:600px;font-size:15px;color:#6f6d62;line-height:1.95;">매일의 챌린지로 아낀 금액은 <b style="color:#F18131;font-weight:700;">‘현실 저축액’</b>으로 차곡차곡 쌓이고<br>그만큼의 <b style="color:#F18131;font-weight:700;">‘포인트’</b>가 지급되어 캐릭터와 공간을 꾸밀 수 있어요.<br>눈에 보이는 성취와 나만의 스타일로,<br>즐겁게, 꾸준히 저축 습관을 만들어 보세요.</div>
+  <img class="abs" src="images/section_1_bg.png" style="left:0;top:1039px;width:1440px;height:912px;">
+  <div class="abs eyebrow" style="left:570px;top:1088px;width:300px;font-size:26px;color:#556348;">OVERVIEW</div>
+  <div class="abs center" style="left:250px;top:1148px;width:940px;font-size:46px;font-weight:700;color:#3d3a33;line-height:1.25;letter-spacing:-.02em;">아끼는 하루가 쌓여 <span style="color:#F2862D;">내일의 나</span>를 바꾼다</div>
+  <div class="abs center" style="left:180px;top:1234px;width:1080px;font-size:19px;color:#6f6d62;line-height:2.0;">매일의 챌린지로 아낀 금액은 <b style="color:#F2862D;font-weight:700;">‘현실 저축액’</b>으로 차곡차곡 쌓이고<br>그만큼의 <b style="color:#F2862D;font-weight:700;">‘포인트’</b>가 지급되어 캐릭터와 공간을 꾸밀 수 있어요.<div style="margin-top:22px;">눈에 보이는 성취와 나만의 스타일로, 즐겁게, 꾸준히 저축 습관을 만들어 보세요.</div></div>
 
   <!-- ===================== 3. RESEARCH (1751–2685) ===================== -->
-  <div class="abs" style="left:0;top:1751px;width:1440px;height:934px;background:#AFB59A;"></div>
-  <div class="abs eyebrow" style="left:600px;top:1778px;width:240px;color:#33372c;">RESEARCH</div>
-  <div class="abs center" style="left:398px;top:1845px;width:643px;font-size:26px;font-weight:700;color:#34322b;line-height:1.5;letter-spacing:-.01em;">2030세대는 단순한 ‘절약’보다<br>눈에 보이는 <b style="color:#F18131;font-weight:700;">보상과 성취 경험</b>에 더 크게 반응합니다.</div>
-  <div class="abs center" style="left:421px;top:1968px;width:598px;font-size:15px;color:#4e5343;line-height:1.62;">직접적인 저축 습관 형성보다, 캐릭터 성장·꾸미기·레벨업 같은<br>게임형 보상 구조에서 더 높은 지속 참여율을 보였습니다.</div>
+  <div class="abs" style="left:0;top:2151px;width:1440px;height:934px;background:#AFB59A;"></div>
+  <div class="abs eyebrow" style="left:600px;top:2178px;width:240px;font-size:26px;color:#33372c;">RESEARCH</div>
+  <div class="abs center" style="left:340px;top:2245px;width:760px;font-size:33px;font-weight:700;color:#34322b;line-height:1.36;letter-spacing:-.01em;">2030세대는 단순한 ‘절약’보다<br>눈에 보이는 <b style="color:#FFE101;font-weight:700;">보상과 성취 경험</b>에 더 크게 반응합니다.</div>
+  <div class="abs center" style="left:421px;top:2363px;width:598px;font-size:19px;color:#4e5343;line-height:1.62;">직접적인 저축 습관 형성보다, 캐릭터 성장·꾸미기·레벨업 같은<br>게임형 보상 구조에서 더 높은 지속 참여율을 보였습니다.</div>
 
   <!-- Research Card 1 : 막대그래프 -->
-  <div class="abs" style="left:81px;top:2113px;width:628px;height:400px;background:#fff;border-radius:24px;box-shadow:0 10px 26px rgba(90,80,50,.07);"></div>
-  <div class="abs" style="left:131px;top:2146px;width:528px;height:28px;font-weight:700;font-size:18px;color:#5a6149;">챌린지형 앱 지속 사용 이유 <span style="float:right;font-weight:400;font-size:13px;color:#a9a596;">(단위:%, 복수응답)</span></div>
-  <img class="abs" src="images/research-bar-chart.png" style="left:122px;top:2194px;width:546px;height:283px;">
-  <div class="abs" style="left:300px;top:2513px;width:0;height:30px;border-left:2px dotted #d4d8c7;"></div>
-  <div class="abs" style="left:300px;top:2541px;width:22px;height:0;border-top:2px dotted #d4d8c7;"></div>
-  <div class="abs" style="left:331px;top:2530px;width:296px;font-size:14px;color:#43483a;line-height:1.5;">단순 가계부보다 보상이 있는 구조에서<br>더 높은 지속 사용률</div>
+  <div class="abs" style="left:81px;top:2513px;width:628px;height:400px;background:#fff;border-radius:24px;box-shadow:0 10px 26px rgba(90,80,50,.07);"></div>
+  <div class="abs" style="left:131px;top:2546px;width:528px;height:28px;font-weight:700;font-size:18px;color:#5a6149;">챌린지형 앱 지속 사용 이유 <span style="float:right;font-weight:400;font-size:13px;color:#a9a596;">(단위:%, 복수응답)</span></div>
+  <img class="abs" src="images/research-bar-chart.png" style="left:122px;top:2594px;width:546px;height:283px;">
+  <div class="abs" style="left:300px;top:2913px;width:0;height:30px;border-left:2px dotted #d4d8c7;"></div>
+  <div class="abs" style="left:300px;top:2941px;width:22px;height:0;border-top:2px dotted #d4d8c7;"></div>
+  <div class="abs" style="left:331px;top:2930px;width:296px;font-size:14px;color:#43483a;line-height:1.5;">단순 가계부보다 보상이 있는 구조에서<br>더 높은 지속 사용률</div>
 
   <!-- Research Card 2 : 도넛차트 -->
-  <div class="abs" style="left:733px;top:2113px;width:628px;height:400px;background:#fff;border-radius:24px;box-shadow:0 10px 26px rgba(90,80,50,.07);"></div>
-  <div class="abs" style="left:783px;top:2146px;width:528px;height:28px;font-weight:700;font-size:18px;color:#5a6149;">소비 스트레스 해소 방식 <span style="float:right;font-weight:400;font-size:13px;color:#a9a596;">(단위:%, 복수응답)</span></div>
-  <img class="abs" src="images/research-pie-chart.png" style="left:803px;top:2213px;width:235px;height:235px;">
-  <div class="abs" style="left:1110px;top:2281px;width:197px;font-size:14px;color:#6f6d60;line-height:2.4;">
+  <div class="abs" style="left:733px;top:2513px;width:628px;height:400px;background:#fff;border-radius:24px;box-shadow:0 10px 26px rgba(90,80,50,.07);"></div>
+  <div class="abs" style="left:783px;top:2546px;width:528px;height:28px;font-weight:700;font-size:18px;color:#5a6149;">소비 스트레스 해소 방식 <span style="float:right;font-weight:400;font-size:13px;color:#a9a596;">(단위:%, 복수응답)</span></div>
+  <img class="abs" src="images/research-pie-chart.png" style="left:803px;top:2613px;width:235px;height:235px;">
+  <div class="abs" style="left:1110px;top:2681px;width:197px;font-size:14px;color:#6f6d60;line-height:2.4;">
     <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F18131;margin-right:8px;"></span>작은 소비로 스트레스 해소<br>
     <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#6C84C0;margin-right:8px;"></span>게임/취미 활동<br>
     <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#D6D0C6;margin-right:8px;"></span>기록 및 계획 관리
   </div>
-  <div class="abs" style="left:938px;top:2513px;width:0;height:30px;border-left:2px dotted #d4d8c7;"></div>
-  <div class="abs" style="left:938px;top:2541px;width:22px;height:0;border-top:2px dotted #d4d8c7;"></div>
-  <div class="abs" style="left:969px;top:2530px;width:237px;font-size:14px;color:#43483a;line-height:1.5;">2030세대는 소비 자체보다<br>‘대리 만족형 보상’에 높은 반응</div>
+  <div class="abs" style="left:938px;top:2913px;width:0;height:30px;border-left:2px dotted #d4d8c7;"></div>
+  <div class="abs" style="left:938px;top:2941px;width:22px;height:0;border-top:2px dotted #d4d8c7;"></div>
+  <div class="abs" style="left:969px;top:2930px;width:237px;font-size:14px;color:#43483a;line-height:1.5;">2030세대는 소비 자체보다<br>‘대리 만족형 보상’에 높은 반응</div>
+
+  <!-- PROJECT GOAL + STYLE GUIDE 배경 (#FDF9F5, 콘텐츠 뒤) -->
+  <div class="abs" style="left:0;top:3085px;width:1440px;height:2687px;background:#FDF9F5;"></div>
 
   <!-- ===================== 4. PROJECT GOAL (≈2785) ===================== -->
-  <div class="abs eyebrow" style="left:623px;top:2785px;width:197px;">PROJECT GOAL</div>
-  <div class="abs center" style="left:430px;top:2857px;width:580px;font-size:27px;font-weight:700;color:#3d3a33;letter-spacing:-.01em;">작은 절약으로 <b style="color:#F18131;font-weight:700;">성취감</b>을 만드는 소비 습관</div>
-  <div class="abs desc center" style="left:412px;top:2931px;width:615px;font-size:15px;">매일의 챌린지로 돈을 기록하고, 모은 포인트로 굴비와 방을 꾸미며<br>절약을 ‘참는 행동’이 아닌 ‘재미있는 성장 경험’으로 만듭니다.</div>
+  <div class="abs eyebrow" style="left:560px;top:3385px;width:320px;font-size:26px;color:#556348;">PROJECT GOAL</div>
+  <div class="abs center" style="left:430px;top:3457px;width:580px;font-size:33px;font-weight:700;color:#3d3a33;line-height:1.36;letter-spacing:-.01em;">작은 절약으로 <b style="color:#F18131;font-weight:700;">성취감</b>을 만드는 소비 습관</div>
+  <div class="abs desc center" style="left:412px;top:3530px;width:615px;font-size:19px;">매일의 챌린지로 돈을 기록하고, 모은 포인트로 굴비와 방을 꾸미며<br>절약을 ‘참는 행동’이 아닌 ‘재미있는 성장 경험’으로 만듭니다.</div>
 
   <!-- WHO / HOW / WHAT -->
-  <div class="abs" style="left:297px;top:3071px;width:846px;height:293px;">
+  <div class="abs" style="left:297px;top:3671px;width:846px;height:293px;">
     <!-- 연결 점선 + 주황 배지 -->
     <div style="position:absolute;left:234px;top:176px;width:72px;border-top:2px dotted #cbb991;"></div>
     <div style="position:absolute;left:540px;top:176px;width:71px;border-top:2px dotted #cbb991;"></div>
@@ -110,57 +121,57 @@
       <img src="images/icon_1.png" style="position:absolute;left:67px;top:0;width:100px;height:103px;z-index:2;">
       <div style="position:absolute;left:0;top:59px;width:234px;height:234px;border:2px dotted #cbb991;border-radius:50%;background:transparent;"></div>
       <div style="position:absolute;left:0;top:120px;width:235px;font-weight:700;font-size:22px;color:#F18131;">WHO</div>
-      <div style="position:absolute;left:20px;top:166px;width:196px;font-size:12px;color:#6b6a5e;line-height:1.5;">스스로의 소비 습관을 바꾸고 자신을 더 잘 관리하고 싶은 2030 사용자</div>
+      <div style="position:absolute;left:20px;top:166px;width:196px;font-size:18px;color:#6b6a5e;line-height:1.5;">스스로의 소비 습관을 바꾸고 자신을 더 잘 관리하고 싶은 2030 사용자</div>
     </div>
     <!-- HOW -->
     <div class="abs center" style="left:306px;top:0;width:234px;">
       <img src="images/icon_2.png" style="position:absolute;left:67px;top:1px;width:100px;height:100px;z-index:2;">
       <div style="position:absolute;left:0;top:59px;width:234px;height:234px;border:2px dotted #cbb991;border-radius:50%;background:transparent;"></div>
       <div style="position:absolute;left:0;top:120px;width:234px;font-weight:700;font-size:22px;color:#F18131;">HOW</div>
-      <div style="position:absolute;left:18px;top:166px;width:198px;font-size:12px;color:#6b6a5e;line-height:1.5;">챌린지로 절약을 실천하면 아낀 금액만큼 포인트가 쌓여 현명한 보상 제공</div>
+      <div style="position:absolute;left:18px;top:166px;width:198px;font-size:18px;color:#6b6a5e;line-height:1.5;">챌린지로 절약을 실천하면 아낀 금액만큼 포인트가 쌓여 현명한 보상 제공</div>
     </div>
     <!-- WHAT -->
     <div class="abs center" style="left:611px;top:0;width:235px;">
       <img src="images/icon_3.png" style="position:absolute;left:62px;top:0;width:110px;height:100px;z-index:2;">
       <div style="position:absolute;left:0;top:59px;width:234px;height:234px;border:2px dotted #cbb991;border-radius:50%;background:transparent;"></div>
       <div style="position:absolute;left:0;top:120px;width:235px;font-weight:700;font-size:22px;color:#F18131;">WHAT</div>
-      <div style="position:absolute;left:33px;top:166px;width:170px;font-size:12px;color:#6b6a5e;line-height:1.5;">굴비와 방을 꾸미며 눈에 보이는 변화를 통해 성취감을 얻는 서비스</div>
+      <div style="position:absolute;left:19px;top:166px;width:198px;font-size:18px;color:#6b6a5e;line-height:1.5;">굴비와 방을 꾸미며 눈에 보이는 변화를 통해 성취감을 얻는 서비스</div>
     </div>
   </div>
   <!-- 배너로 내려가는 점선 -->
-  <div class="abs" style="left:720px;top:3364px;height:176px;border-left:2px dotted #cbb991;"></div>
-  <div class="abs" style="left:713px;top:3533px;width:15px;height:15px;border-radius:50%;background:#F18131;"></div>
+  <div class="abs" style="left:720px;top:3964px;height:152px;border-left:2px dotted #cbb991;"></div>
+  <div class="abs" style="left:713px;top:4109px;width:15px;height:15px;border-radius:50%;background:#F18131;"></div>
 
   <!-- 목표 배너 -->
-  <div class="abs" style="left:125px;top:3540px;width:1179px;height:241px;background:#FCE9D2;border-radius:30px;"></div>
-  <img class="abs" src="images/goal_bg1.png" style="left:258px;top:3588px;width:67px;height:120px;mix-blend-mode:darken;">
-  <img class="abs" src="images/goal_bg2.png" style="left:1092px;top:3600px;width:74px;height:109px;mix-blend-mode:darken;">
-  <div class="abs center" style="left:628px;top:3578px;width:182px;font-weight:700;font-size:18px;letter-spacing:.04em;color:#F18131;">PROJECT GOAL</div>
-  <div class="abs center" style="left:412px;top:3636px;width:615px;font-size:15px;color:#5a5648;line-height:1.7;">작지만 의미있는 절약을 통해 현실 속 소비 습관을 개선하고,<br><b style="color:#F18131;font-weight:600;">지급된 포인트로 캐릭터와 방을 꾸미며 성취감과 재미를</b><br>동시에 느낄 수 있는 챌린지형 저축 게임</div>
+  <div class="abs" style="left:125px;top:4116px;width:1179px;height:241px;background:#FCE9D2;border-radius:30px;"></div>
+  <img class="abs" src="images/goal_bg1.png" style="left:258px;top:4164px;width:67px;height:120px;mix-blend-mode:darken;">
+  <img class="abs" src="images/goal_bg2.png" style="left:1092px;top:4176px;width:74px;height:109px;mix-blend-mode:darken;">
+  <div class="abs center" style="left:628px;top:4132px;width:182px;font-weight:700;font-size:18px;letter-spacing:.04em;color:#F18131;">PROJECT GOAL</div>
+  <div class="abs center" style="left:412px;top:4173px;width:615px;font-size:22px;color:#5a5648;line-height:1.7;">작지만 의미있는 절약을 통해 현실 속 소비 습관을 개선하고,<br><b style="color:#F18131;font-weight:600;">지급된 포인트로 캐릭터와 방을 꾸미며 성취감과 재미를</b><br>동시에 느낄 수 있는 챌린지형 저축 게임</div>
 
   <!-- ===================== 5. STYLE GUIDE (≈3881) ===================== -->
-  <div class="abs" style="left:46px;top:3935px;width:1356px;height:740px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,rgba(110,100,70,.10) 21px,rgba(110,100,70,.10) 22px);"></div>
-  <div class="abs eyebrow" style="left:600px;top:3881px;width:240px;color:#556348;">STYLE GUIDE</div>
-  <div class="abs" style="left:81px;top:4298px;width:1280px;border-top:1px dashed #c8bda3;"></div>
+  <div class="abs" style="left:46px;top:4735px;width:1356px;height:740px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,rgba(110,100,70,.10) 21px,rgba(110,100,70,.10) 22px);"></div>
+  <div class="abs eyebrow" style="left:560px;top:4681px;width:320px;font-size:26px;color:#556348;">STYLE GUIDE</div>
+  <div class="abs" style="left:81px;top:5098px;width:1280px;border-top:1px dashed #c8bda3;"></div>
 
   <!-- Typography -->
-  <div class="abs" style="left:166px;top:4002px;width:160px;font-weight:700;font-size:27px;color:var(--title);">Typography</div>
-  <div class="abs" style="left:165px;top:4070px;width:200px;">
+  <div class="abs" style="left:166px;top:4802px;width:160px;font-weight:700;font-size:27px;color:var(--title);">Typography</div>
+  <div class="abs" style="left:165px;top:4870px;width:200px;">
     <div style="font-weight:700;font-size:18px;color:#5a6149;">강원 에듀</div>
     <div style="font-weight:500;font-size:15px;color:#8a887b;margin-top:14px;line-height:1.45;">오늘도 악착같이 아꼈다!<br>힙하게 버티는 저축 챌린지</div>
   </div>
-  <div class="abs" style="left:428px;top:4070px;width:250px;">
+  <div class="abs" style="left:428px;top:4870px;width:250px;">
     <div style="font-weight:700;font-size:18px;color:#5a6149;">GangwonEduAll</div>
     <div style="font-weight:500;font-size:15px;color:#8a887b;margin-top:14px;line-height:1.45;">₩ 300,000 SAVE COMPLETE<br>굴비 인간 성장 중...</div>
   </div>
 
   <!-- Color System -->
-  <div class="abs" style="left:817px;top:4002px;width:180px;font-weight:700;font-size:27px;color:var(--title);">Color System</div>
-  <div class="abs" style="left:817px;top:4070px;width:194px;">
+  <div class="abs" style="left:817px;top:4802px;width:180px;font-weight:700;font-size:27px;color:var(--title);">Color System</div>
+  <div class="abs" style="left:817px;top:4870px;width:194px;">
     <div style="font-weight:600;font-size:15px;color:#5a6149;">MAIN</div>
     <div style="margin-top:14px;width:194px;height:120px;background:#F6EEDE;border-radius:12px;border:1px solid #e8dfca;"></div>
   </div>
-  <div class="abs" style="left:1035px;top:4070px;width:193px;">
+  <div class="abs" style="left:1035px;top:4870px;width:193px;">
     <div style="font-weight:600;font-size:15px;color:#5a6149;">SUB</div>
     <div style="margin-top:14px;display:flex;">
       <div style="width:96px;height:120px;background:#ABBCA2;border-radius:12px 0 0 12px;position:relative;"><span style="position:absolute;left:8px;bottom:8px;font-size:12px;font-weight:500;color:#fff;">#ABBCA2</span></div>
@@ -169,9 +180,9 @@
   </div>
 
   <!-- Application Logo -->
-  <div class="abs" style="left:817px;top:4368px;width:220px;font-weight:700;font-size:27px;color:var(--title);">Application Logo</div>
-  <div class="abs desc" style="left:817px;top:4429px;width:529px;font-size:13.5px;line-height:1.72;">자린고비의 로고는 천장에 굴비를 매달아두고 바라보며 밥을 먹었다는 ‘궁상스럽지만 생활력 강한’ 한국의 절약 문화에서 영감을 받아 제작되었습니다. 실제로 굴비를 먹지는 못하지만, 그 존재만으로도 한 끼를 버텨냈던 모습처럼 작은 절약과 반복되는 챌린지를 통해 조금씩 목표를 향해 나아가는 과정을 담아냅니다. 로고 속 매달린 굴비 이미지는 단순한 캐릭터가 아닌 ‘악착같이 버티며 살아가는 청춘의 상징’이며, 궁핍함조차 유쾌하게 소비하는 자린고비만의 B급 감성을 함께 표현합니다.</div>
-  <div class="abs center" style="left:165px;top:4368px;width:157px;">
+  <div class="abs" style="left:817px;top:5168px;width:220px;font-weight:700;font-size:27px;color:var(--title);">Application Logo</div>
+  <div class="abs desc" style="left:817px;top:5229px;width:529px;font-size:13.5px;line-height:1.72;">자린고비의 로고는 천장에 굴비를 매달아두고 바라보며 밥을 먹었다는 ‘궁상스럽지만 생활력 강한’ 한국의 절약 문화에서 영감을 받아 제작되었습니다. 실제로 굴비를 먹지는 못하지만, 그 존재만으로도 한 끼를 버텨냈던 모습처럼 작은 절약과 반복되는 챌린지를 통해 조금씩 목표를 향해 나아가는 과정을 담아냅니다. 로고 속 매달린 굴비 이미지는 단순한 캐릭터가 아닌 ‘악착같이 버티며 살아가는 청춘의 상징’이며, 궁핍함조차 유쾌하게 소비하는 자린고비만의 B급 감성을 함께 표현합니다.</div>
+  <div class="abs center" style="left:165px;top:5168px;width:157px;">
     <div style="position:relative;width:157px;height:149px;">
       <img src="images/logo_sk.png" style="width:157px;height:149px;object-fit:contain;">
       <span style="position:absolute;left:-4px;top:-4px;width:13px;height:13px;border-left:2px solid #8b8472;border-top:2px solid #8b8472;"></span>
@@ -181,149 +192,228 @@
     </div>
     <div style="margin-top:20px;font-weight:600;font-size:15px;color:#8a887b;">Outline</div>
   </div>
-  <div class="abs center" style="left:390px;top:4399px;width:124px;">
+  <div class="abs center" style="left:390px;top:5199px;width:124px;">
     <div style="width:124px;height:118px;display:flex;align-items:center;justify-content:center;"><img src="images/logo_mid.png" style="width:124px;"></div>
     <div style="margin-top:20px;font-weight:600;font-size:15px;color:#8a887b;">Type 1</div>
   </div>
-  <div class="abs center" style="left:582px;top:4399px;width:104px;">
+  <div class="abs center" style="left:582px;top:5199px;width:104px;">
     <div style="width:104px;height:118px;display:flex;align-items:center;justify-content:center;"><img src="images/logo_final.png" style="width:104px;"></div>
     <div style="margin-top:20px;font-weight:600;font-size:15px;color:#8a887b;">Type 2</div>
   </div>
 
+  <!-- ONBOARDING + MAIN PAGE + CHALLENGE 배경 (#F4E9DD, section_bg 뒤 → 브랜드 크림이 자연스럽게 페이드) -->
+  <div class="abs" style="left:0;top:6837px;width:1440px;height:5053px;background:#F4E9DD;"></div>
+
   <!-- ===================== 6. 브랜드 정의 (≈4772) ===================== -->
-  <img class="abs" src="images/section_bg.png" style="left:0;top:4772px;width:1440px;height:1065px;">
-  <div class="abs" style="left:107px;top:4927px;width:420px;font-weight:800;font-size:62px;letter-spacing:.16em;color:#556348;">자 린 고 비</div>
-  <img class="abs" src="images/big_logo.png" style="left:248px;top:4773px;width:147px;height:120px;">
-  <div class="abs desc" style="left:107px;top:5094px;width:411px;font-size:15px;color:#6f6d60;">‘자린고비’는 매일의 작은 절약을 기록하고, 나만의 공간과 캐릭터를 성장시켜가는 저축 게임형 절약 습관 관리 앱입니다.</div>
-  <div class="abs desc" style="left:107px;top:5225px;width:456px;font-size:15px;color:#6f6d60;">보상 포인트로 캐릭터의 스타일과 방을 꾸며 올리고, 지속적인 소비 습관 개선을 경험할 수 있도록 돕습니다.</div>
+  <img class="abs" src="images/section_bg.png" style="left:0;top:5772px;width:1440px;height:1065px;">
+  <div class="abs" style="left:107px;top:5927px;width:420px;font-weight:800;font-size:62px;letter-spacing:.16em;color:#556348;">자 린 고 비</div>
+  <img class="abs" src="images/big_logo.png" style="left:248px;top:5773px;width:147px;height:120px;">
+  <div class="abs desc" style="left:107px;top:6094px;width:430px;font-size:19px;color:#6f6d60;">‘자린고비’는 매일의 작은 절약을 기록하고, 나만의 공간과 캐릭터를 성장시켜가는 저축 게임형 절약 습관 관리 앱입니다.</div>
+  <div class="abs desc" style="left:107px;top:6225px;width:470px;font-size:19px;color:#6f6d60;">보상 포인트로 캐릭터의 스타일과 방을 꾸며 올리고, 지속적인 소비 습관 개선을 경험할 수 있도록 돕습니다.</div>
 
   <!-- ===================== 7. ONBOARDING (≈5821) ===================== -->
-  <div class="abs" style="left:80px;top:5821px;"><span class="pill">ONBOARDING</span></div>
-  <div class="abs" style="left:80px;top:5896px;width:420px;font-size:33px;font-weight:700;color:#485811;line-height:1.32;letter-spacing:-.01em;">쉽고 가볍게 <span style="font-weight:500;">시작하는</span><br>나만의 절약 루틴</div>
-  <div class="abs" style="left:80px;top:6024px;width:740px;font-size:15px;color:#6f6d62;line-height:1.75;">자린고비의 온보딩은 사용자가 복잡한 설정 없이<br>앱의 핵심 흐름을 자연스럽게 이해할 수 있도록 구성했습니다.<br>목표 금액 설정부터 닉네임 생성, 첫 절약 미션 시작까지 이어지는 과정을 통해<br>사용자는 게임처럼 가볍게 절약 습관을 시작할 수 있습니다.</div>
-  <img class="abs" src="images/mockup_1.png" style="left:301px;top:6215px;width:940px;height:658px;">
+  <div class="abs" style="left:80px;top:7021px;"><span class="pill">ONBOARDING</span></div>
+  <div class="abs" style="left:80px;top:7096px;width:420px;font-size:33px;font-weight:700;color:#485811;line-height:1.36;letter-spacing:-.01em;">쉽고 가볍게 <span style="font-weight:500;">시작하는</span><br>나만의 절약 루틴</div>
+  <div class="abs" style="left:80px;top:7214px;width:760px;font-size:19px;color:#6f6d62;line-height:1.75;">자린고비의 온보딩은 사용자가 복잡한 설정 없이<br>앱의 핵심 흐름을 자연스럽게 이해할 수 있도록 구성했습니다.<br>목표 금액 설정부터 닉네임 생성, 첫 절약 미션 시작까지 이어지는 과정을 통해<br>사용자는 게임처럼 가볍게 절약 습관을 시작할 수 있습니다.</div>
+  <img class="abs" src="images/mockup_1.png" style="left:301px;top:7415px;width:940px;height:658px;">
   <!-- 닉네임 설정 콜아웃 + 점선 -->
-  <div class="abs" style="left:1018px;top:6221px;width:127px;border-top:2px dotted #bfb59c;"></div>
-  <div class="abs" style="left:1010px;top:6214px;width:14px;height:14px;border-radius:50%;background:#8a9c6a;"></div>
-  <div class="abs" style="left:1150px;top:6196px;width:210px;">
-    <div style="font-weight:700;font-size:21px;color:#485811;">닉네임 설정</div>
+  <div class="abs" style="left:1018px;top:7421px;width:127px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:1010px;top:7414px;width:14px;height:14px;border-radius:50%;background:#8a9c6a;"></div>
+  <div class="abs" style="left:1150px;top:7396px;width:210px;">
+    <div style="font-weight:700;font-size:20px;color:#485811;">닉네임 설정</div>
     <div class="desc" style="font-size:13px;margin-top:8px;">앱에서 사용할 닉네임을 설정해요.</div>
   </div>
   <!-- 모드 선택 콜아웃 + 점선 -->
-  <div class="abs" style="left:245px;top:6450px;width:118px;border-top:2px dotted #bfb59c;"></div>
-  <div class="abs" style="left:245px;top:6450px;height:96px;border-left:2px dotted #bfb59c;"></div>
-  <div class="abs" style="left:238px;top:6539px;width:14px;height:14px;border-radius:50%;background:#8a9c6a;"></div>
-  <div class="abs" style="left:97px;top:6591px;width:192px;">
-    <div style="font-weight:700;font-size:21px;color:#485811;">모드 선택</div>
+  <div class="abs" style="left:245px;top:7650px;width:118px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:245px;top:7650px;height:96px;border-left:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:238px;top:7739px;width:14px;height:14px;border-radius:50%;background:#8a9c6a;"></div>
+  <div class="abs" style="left:97px;top:7791px;width:192px;">
+    <div style="font-weight:700;font-size:20px;color:#485811;">모드 선택</div>
     <div class="desc" style="font-size:13px;margin-top:8px;">30만원 챌린지(일반)와 100만원 챌린지(어려움) 중 목표에 맞는 모드를 선택하세요.</div>
   </div>
 
   <!-- ===================== 8. MAIN PAGE (≈7048) ===================== -->
-  <div class="abs" style="left:80px;top:7048px;"><span class="pill">MAIN PAGE</span></div>
-  <div class="abs h-title" style="left:80px;top:7124px;width:300px;font-size:31px;">자린이와 함께하는<br>즐거운 절약 챌린지</div>
-  <div class="abs desc" style="left:80px;top:7251px;width:370px;font-size:15px;">오늘의 미션을 수행하고, 자린이를 성장시켜 나만의 공간을 예쁘게 꾸며보세요. 작은 절약이 큰 변화를 만들어낼 거예요!</div>
-  <img class="abs" src="images/mockup_2.png" style="left:948px;top:7183px;width:411px;height:825px;">
-  <img class="abs" src="images/ch_1.png" style="left:88px;top:7580px;width:109px;height:206px;">
-  <img class="abs" src="images/ch_3.png" style="left:232px;top:7577px;width:108px;height:206px;">
-  <img class="abs" src="images/ch_2.png" style="left:375px;top:7577px;width:108px;height:206px;">
-  <div class="abs" style="left:560px;top:7636px;width:224px;">
+  <!-- 배경 원 (MAIN↔CHALLENGE 경계 좌측, 캐릭터 뒤) -->
+  <div class="abs" style="left:-274px;top:9104px;width:816px;height:816px;border-radius:50%;background:#EFE3CE;"></div>
+
+  <div class="abs" style="left:80px;top:8448px;"><span class="pill">MAIN PAGE</span></div>
+  <div class="abs h-title" style="left:80px;top:8524px;width:300px;font-size:33px;">자린이와 함께하는<br>즐거운 절약 챌린지</div>
+  <div class="abs desc" style="left:80px;top:8642px;width:400px;font-size:19px;">오늘의 미션을 수행하고, 자린이를 성장시켜 나만의 공간을 예쁘게 꾸며보세요. 작은 절약이 큰 변화를 만들어낼 거예요!</div>
+  <img class="abs" src="images/mockup_2.png" style="left:948px;top:8583px;width:411px;height:825px;">
+  <img class="abs" src="images/ch_1.png" style="left:88px;top:8980px;width:109px;height:206px;">
+  <img class="abs" src="images/ch_3.png" style="left:232px;top:8977px;width:108px;height:206px;">
+  <img class="abs" src="images/ch_2.png" style="left:375px;top:8977px;width:108px;height:206px;">
+
+  <!-- 콜아웃 1 : 오늘의 절약 미션 -->
+  <div class="abs" style="left:585px;top:8796px;width:240px;">
     <div style="font-weight:700;font-size:20px;color:#5a6149;">오늘의 절약 미션</div>
     <div class="desc" style="font-size:13px;margin-top:6px;">매일 새로운 절약 미션이 주어져요. 미션을 완료하고 코인을 모아보세요.</div>
   </div>
-  <div class="abs" style="left:560px;top:7900px;width:232px;">
+  <div class="abs" style="left:832px;top:8812px;width:114px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:825px;top:8805px;width:14px;height:14px;border-radius:50%;background:#8a9c6a;"></div>
+
+  <!-- 콜아웃 2 : 꾸민 자린이 & 방 공간 -->
+  <div class="abs" style="left:560px;top:8948px;width:236px;">
     <div style="font-weight:700;font-size:20px;color:#5a6149;">꾸민 자린이 &amp; 방 공간</div>
     <div class="desc" style="font-size:13px;margin-top:6px;">절약할수록 자린이가 성장하고, 방을 꾸밀 수 있는 아이템이 늘어나요. 나만의 공간을 완성하여 절약의 즐거움을 느껴보세요.</div>
   </div>
+  <div class="abs" style="left:806px;top:9028px;width:140px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:799px;top:9021px;width:14px;height:14px;border-radius:50%;background:#8a9c6a;"></div>
+
+  <!-- 콜아웃 3 : 하단 기능 메뉴 -->
+  <div class="abs" style="left:560px;top:9140px;width:260px;">
+    <div style="font-weight:700;font-size:20px;color:#5a6149;">하단 기능 메뉴</div>
+    <div class="desc" style="font-size:13px;margin-top:6px;">다양한 메뉴를 통해 절약 미션을 더 즐겁게 경험하세요.</div>
+  </div>
+  <div class="abs" style="left:806px;top:9162px;width:140px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:799px;top:9155px;width:14px;height:14px;border-radius:50%;background:#8a9c6a;"></div>
+  <!-- 기능 메뉴 테이블 -->
+  <div class="abs" style="left:560px;top:9218px;width:316px;background:#D2D7C1;border-radius:16px;padding:18px 24px;font-size:12.5px;color:#5e6450;line-height:1.4;">
+    <div style="display:flex;align-items:center;margin-bottom:14px;">
+      <span style="font-weight:700;color:#556149;width:52px;flex:none;">수다방</span>
+      <span style="color:#aab293;margin:0 18px;">|</span>
+      <span>다른 사람들과 소통해요.</span>
+    </div>
+    <div style="display:flex;align-items:center;margin-bottom:14px;">
+      <span style="font-weight:700;color:#556149;width:52px;flex:none;">챌린지</span>
+      <span style="color:#aab293;margin:0 18px;">|</span>
+      <span>챌린지 관련 정보를 확인해요.</span>
+    </div>
+    <div style="display:flex;align-items:center;">
+      <span style="font-weight:700;color:#556149;width:52px;flex:none;">카메라</span>
+      <span style="color:#aab293;margin:0 18px;">|</span>
+      <span>인증 사진을 찍어요.</span>
+    </div>
+  </div>
 
   <!-- ===================== 9. CHALLENGE (≈8298) ===================== -->
-  <div class="abs" style="left:80px;top:8298px;"><span class="pill">CHALLENGE</span></div>
-  <div class="abs h-title" style="left:80px;top:8368px;width:420px;font-size:31px;">매일의 작은 실천,<br>모여서 큰 변화를 만들어요</div>
-  <div class="abs desc" style="left:80px;top:8495px;width:463px;font-size:15px;">매일 새롭게 추천되는 ‘오늘의 절약 미션’으로 지속적인 절약 습관을 만들고, 목표 달성 현황을 확인하며 뿌듯함을 경험할 수 있어요.</div>
-  <img class="abs" src="images/mockup_4-1.png" style="left:560px;top:8589px;width:254px;height:524px;">
-  <img class="abs" src="images/mockup_4-2.png" style="left:865px;top:8589px;width:254px;height:523px;">
-  <img class="abs" src="images/mockup_3.png" style="left:77px;top:8800px;width:354px;height:710px;">
-  <img class="abs" src="images/mockup_5-1.png" style="left:560px;top:9284px;width:255px;height:521px;">
-  <img class="abs" src="images/mockup_5-2.png" style="left:870px;top:9279px;width:252px;height:692px;">
-  <div class="abs" style="left:1150px;top:8685px;width:200px;">
+  <div class="abs" style="left:80px;top:9898px;"><span class="pill" style="background:#485811;color:#F6EEDE;">CHALLENGE</span></div>
+  <div class="abs h-title" style="left:80px;top:9968px;width:420px;font-size:33px;">매일의 작은 실천,<br>모여서 큰 변화를 만들어요</div>
+  <div class="abs desc" style="left:80px;top:10086px;width:480px;font-size:19px;">매일 새롭게 추천되는 ‘오늘의 절약 미션’으로 지속적인 절약 습관을 만들고, 목표 달성 현황을 확인하며 뿌듯함을 경험할 수 있어요.</div>
+  <img class="abs" src="images/mockup_4-1.png" style="left:560px;top:10189px;width:254px;height:524px;">
+  <img class="abs" src="images/mockup_4-2.png" style="left:865px;top:10189px;width:254px;height:523px;">
+  <img class="abs" src="images/mockup_3.png" style="left:77px;top:10400px;width:354px;height:710px;">
+  <img class="abs" src="images/mockup_5-1.png" style="left:560px;top:10884px;width:255px;height:521px;">
+  <img class="abs" src="images/mockup_5-2.png" style="left:870px;top:10879px;width:252px;height:692px;">
+  <!-- 콜아웃 : 데일리 미션 팝업 (폰4-2 우측, 엘보 커넥터) -->
+  <div class="abs" style="left:1119px;top:10238px;width:35px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:1152px;top:10238px;height:28px;border-left:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:1146px;top:10260px;width:13px;height:13px;border-radius:50%;background:#8a9c6a;"></div>
+  <div class="abs" style="left:1150px;top:10285px;width:200px;">
     <div style="font-weight:700;font-size:18px;color:#5a6149;">데일리 미션 팝업</div>
-    <div class="desc" style="font-size:12.5px;margin-top:6px;">매일 접속 시 오늘의 미션 팝업이 나타나 참여를 유도하고, 목표를 설정할 수 있어요.</div>
+    <div class="desc" style="font-size:12.5px;margin-top:6px;">매일 접속 시 오늘의 미션 팝업이 나타나 사용자들의 참여를 유도하고, 목표를 설정할 수 있어요.</div>
   </div>
-  <div class="abs" style="left:1150px;top:8949px;width:200px;">
+  <!-- 콜아웃 : 목표 달성 현황 (폰4-2 우측, 엘보 커넥터) -->
+  <div class="abs" style="left:1119px;top:10502px;width:35px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:1152px;top:10502px;height:28px;border-left:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:1146px;top:10524px;width:13px;height:13px;border-radius:50%;background:#8a9c6a;"></div>
+  <div class="abs" style="left:1150px;top:10549px;width:200px;">
     <div style="font-weight:700;font-size:18px;color:#5a6149;">목표 달성 현황</div>
     <div class="desc" style="font-size:12.5px;margin-top:6px;">오늘 목표한 금액 대비 달성률을 그래프로 확인하고, 완료 시 보상받을 수 있어요.</div>
   </div>
-  <div class="abs" style="left:254px;top:9655px;width:242px;">
+  <!-- 콜아웃 : 챌린지 리스트 (폰5-1 좌측, 가로 커넥터) -->
+  <div class="abs" style="left:507px;top:11262px;width:53px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:493px;top:11256px;width:13px;height:13px;border-radius:50%;background:#8a9c6a;"></div>
+  <div class="abs" style="left:254px;top:11255px;width:242px;">
     <div style="font-weight:700;font-size:18px;color:#5a6149;">챌린지 리스트</div>
-    <div class="desc" style="font-size:12.5px;margin-top:6px;">다양한 절약 챌린지 목록을 확인하고 내 목표에 맞는 챌린지를 선택해보세요.</div>
+    <div class="desc" style="font-size:12.5px;margin-top:6px;">다양한 절약 챌린지 목록을 확인하고 내 목표에 맞는 챌린지를 선택해보세요. 각 챌린지별 예상 보상과 기간을 한눈에 확인할 수 있어요.</div>
   </div>
-  <div class="abs" style="left:1150px;top:9463px;width:200px;">
+  <!-- 콜아웃 : 챌린지 가이드 페이지 (폰5-2 우측, 엘보 커넥터) -->
+  <div class="abs" style="left:1122px;top:11016px;width:32px;border-top:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:1152px;top:11016px;height:28px;border-left:2px dotted #bfb59c;"></div>
+  <div class="abs" style="left:1146px;top:11038px;width:13px;height:13px;border-radius:50%;background:#8a9c6a;"></div>
+  <div class="abs" style="left:1150px;top:11063px;width:200px;">
     <div style="font-weight:700;font-size:18px;color:#5a6149;">챌린지 가이드 페이지</div>
     <div class="desc" style="font-size:12.5px;margin-top:6px;">선택한 챌린지의 목표와 미션, 참여 인원, 예상 보상 등 상세 정보를 확인할 수 있어요.</div>
   </div>
 
   <!-- ===================== 10. COLLECTION (≈10143) ===================== -->
-  <div class="abs" style="left:74px;top:10143px;"><span class="pill">COLLECTION</span></div>
-  <div class="abs h-title" style="left:74px;top:10213px;width:410px;font-size:29px;">자린이의 취향을 담아<br>나만의 공간을 꾸며보세요</div>
-  <div class="abs desc" style="left:74px;top:10343px;width:290px;font-size:15px;">모은 절약 포인트로 자린이의 의상과 방꾸미기 아이템을 구매할 수 있어요. 꾸밀수록 더 즐거워지는 자린고비의 특별한 경험을 만나보세요.</div>
-  <div class="abs center" style="left:74px;top:10568px;width:206px;font-weight:700;font-size:18px;color:#8a887b;">— 주요 기능 —</div>
-  <div class="abs" style="left:76px;top:10625px;width:245px;">
-    <div style="display:flex;align-items:flex-start;gap:34px;margin-bottom:31px;">
-      <img src="images/icon_clo.png" style="width:66px;height:68px;margin-top:7px;">
-      <div><div style="font-weight:700;font-size:20px;color:#5a6149;">의상 구매</div><div class="desc" style="font-size:12.5px;margin-top:6px;">다양한 모자와 옷으로 자린이의 스타일을 완성해요.</div></div>
+  <!-- 초록 배경 패널 (장식 점 포함, 콘텐츠 뒤) -->
+  <img class="abs" src="images/collection_bg.png" style="left:0;top:11890px;width:1440px;height:1057px;">
+
+  <div class="abs" style="left:74px;top:11943px;"><span class="pill" style="background:#F4ECDA;color:#4a5816;">COLLECTION</span></div>
+  <div class="abs h-title" style="left:74px;top:12013px;width:410px;font-size:33px;color:#F6EEDE;">자린이의 취향을 담아<br>나만의 공간을 꾸며보세요</div>
+  <div class="abs desc" style="left:74px;top:12131px;width:385px;font-size:19px;color:#DCD8C6;">모은 절약 포인트로 자린이의 의상과 방꾸미기 아이템을 구매할 수 있어요. 꾸밀수록 더 즐거워지는 자린고비의 특별한 경험을 만나보세요.</div>
+  <div class="abs center" style="left:74px;top:12368px;width:206px;font-weight:700;font-size:18px;color:#EDE6D5;">— 주요 기능 —</div>
+  <div class="abs" style="left:76px;top:12425px;width:268px;">
+    <div style="display:flex;align-items:center;gap:24px;margin-bottom:30px;">
+      <div style="width:68px;height:68px;background:#F6EEDE;border-radius:22px;display:flex;align-items:center;justify-content:center;flex:none;"><img src="images/icon_clo.png" style="width:44px;height:45px;"></div>
+      <div><div style="font-weight:700;font-size:20px;color:#F6EEDE;">의상 구매</div><div style="font-size:12.5px;margin-top:6px;color:#CDD2BF;line-height:1.55;">다양한 모자와 옷으로 자린이의 스타일을 완성해요.</div></div>
     </div>
-    <div style="display:flex;align-items:flex-start;gap:34px;margin-bottom:31px;">
-      <img src="images/icon_room.png" style="width:66px;height:68px;margin-top:7px;">
-      <div><div style="font-weight:700;font-size:20px;color:#5a6149;">방 꾸미기</div><div class="desc" style="font-size:12.5px;margin-top:6px;">가구와 소품으로 나만의 아늑한 공간을 꾸며보세요.</div></div>
+    <div style="display:flex;align-items:center;gap:24px;margin-bottom:30px;">
+      <div style="width:68px;height:68px;background:#F6EEDE;border-radius:22px;display:flex;align-items:center;justify-content:center;flex:none;"><img src="images/icon_room.png" style="width:44px;height:45px;"></div>
+      <div><div style="font-weight:700;font-size:20px;color:#F6EEDE;">방 꾸미기</div><div style="font-size:12.5px;margin-top:6px;color:#CDD2BF;line-height:1.55;">가구와 소품으로 나만의 아늑한 공간을 꾸며보세요.</div></div>
     </div>
-    <div style="display:flex;align-items:flex-start;gap:34px;">
-      <img src="images/icon_star.png" style="width:66px;height:68px;margin-top:7px;">
-      <div><div style="font-weight:700;font-size:20px;color:#5a6149;">컬렉션 보상</div><div class="desc" style="font-size:12.5px;margin-top:6px;">특정 아이템을 모으면 추가 보상을 받을 수 있어요.</div></div>
+    <div style="display:flex;align-items:center;gap:24px;">
+      <div style="width:68px;height:68px;background:#F6EEDE;border-radius:22px;display:flex;align-items:center;justify-content:center;flex:none;"><img src="images/icon_star.png" style="width:44px;height:45px;"></div>
+      <div><div style="font-weight:700;font-size:20px;color:#F6EEDE;">컬렉션 보상</div><div style="font-size:12.5px;margin-top:6px;color:#CDD2BF;line-height:1.55;">특정 아이템을 모으면 추가 보상을 받을 수 있어요.</div></div>
     </div>
   </div>
-  <img class="abs" src="images/char_1.png" style="left:402px;top:10759px;width:89px;height:118px;">
-  <img class="abs" src="images/char_2.png" style="left:1221px;top:10818px;width:82px;height:173px;">
-  <img class="abs" src="images/mockup_6.png" style="left:470px;top:10377px;width:864px;height:704px;">
+  <img class="abs" src="images/mockup_6.png" style="left:470px;top:12177px;width:864px;height:704px;">
+  <img class="abs" src="images/char_1.png" style="left:402px;top:12559px;width:89px;height:118px;">
+  <img class="abs" src="images/char_2.png" style="left:1221px;top:12618px;width:82px;height:173px;">
 
   <!-- ===================== 11. COMMUNITY (≈11203) ===================== -->
-  <div class="abs" style="left:69px;top:11203px;"><span class="pill">COMMUNITY</span></div>
-  <div class="abs h-title" style="left:69px;top:11279px;width:615px;font-size:29px;">서로의 이야기를 나누고, 함께 성장해요</div>
-  <div class="abs desc" style="left:69px;top:11359px;width:321px;font-size:15px;">관심사별 수다방에서 자유롭게 정보를 공유하고 다양한 사람들과 소통해요.</div>
-  <img class="abs" src="images/mockup_7-1.png" style="left:315px;top:11472px;width:351px;height:687px;">
-  <img class="abs" src="images/mockup_7-2.png" style="left:771px;top:11472px;width:353px;height:687px;">
+  <!-- 배경 (베이지 + confetti 장식 + 하단 곡선, 콘텐츠 뒤) -->
+  <img class="abs" src="images/community_bg.png" style="left:0;top:13147px;width:1440px;height:1234px;">
+
+  <div class="abs" style="left:69px;top:13203px;"><span class="pill">COMMUNITY</span></div>
+  <div class="abs h-title" style="left:69px;top:13279px;width:615px;font-size:33px;">서로의 이야기를 나누고, 함께 성장해요</div>
+  <div class="abs desc" style="left:69px;top:13352px;width:390px;font-size:19px;">관심사별 수다방에서 자유롭게 정보를 공유하고 다양한 사람들과 소통해요.</div>
+  <img class="abs" src="images/mockup_7-1.png" style="left:315px;top:13472px;width:351px;height:687px;">
+  <img class="abs" src="images/mockup_7-2.png" style="left:771px;top:13472px;width:353px;height:687px;">
 
   <!-- ===================== 12. MY PAGE (≈12393) ===================== -->
-  <div class="abs" style="left:81px;top:12393px;"><span class="pill" style="font-size:27px;padding:9px 30px;">MY PAGE</span></div>
-  <div class="abs h-title" style="left:81px;top:12468px;width:270px;font-size:31px;">나의 절약 성장,<br>한눈에 확인해요!</div>
-  <div class="abs desc" style="left:81px;top:12596px;width:313px;font-size:15px;">절약 활동으로 모은 칭호와 랭킹으로 나의 성장을 확인해보세요.</div>
-  <img class="abs" src="images/mockup_8.png" style="left:506px;top:12758px;width:437px;height:885px;">
-  <img class="abs" src="images/mockup_8-1.png" style="left:109px;top:13117px;width:333px;height:526px;">
-  <img class="abs" src="images/mockup_8-2.png" style="left:1022px;top:13021px;width:309px;height:622px;">
-  <div class="abs" style="left:189px;top:12897px;width:236px;">
+  <div class="abs" style="left:81px;top:14593px;"><span class="pill" style="background:#627C54;color:#F6EEDE;">MY PAGE</span></div>
+  <div class="abs h-title" style="left:81px;top:14668px;width:290px;font-size:33px;">나의 절약 성장,<br>한눈에 확인해요!</div>
+  <div class="abs desc" style="left:81px;top:14786px;width:345px;font-size:19px;">절약 활동으로 모은 칭호와 랭킹으로 나의 성장을 확인해보세요.</div>
+  <img class="abs" src="images/mockup_8.png" style="left:506px;top:14958px;width:437px;height:885px;">
+  <img class="abs" src="images/mockup_8-1.png" style="left:109px;top:15317px;width:333px;height:526px;">
+  <img class="abs" src="images/mockup_8-2.png" style="left:1022px;top:15221px;width:309px;height:622px;">
+  <div class="abs" style="left:189px;top:15097px;width:236px;">
     <div class="lead" style="font-size:14px;">절약 활동을 통해 다양한 칭호를 모아보세요!</div>
     <div class="desc" style="font-size:12.5px;margin-top:8px;">획득한 칭호는 프로필에 표시되고, 더 많은 칭호를 향해 도전할 수 있어요.</div>
   </div>
-  <div class="abs" style="left:1084px;top:12835px;width:218px;text-align:right;">
+  <img class="abs" src="images/arrow1.png" style="left:372px;top:15202px;width:58px;height:84px;">
+  <div class="abs" style="left:1084px;top:15035px;width:218px;text-align:right;">
     <div class="lead" style="font-size:14px;">함께하는 절약 챌린지, 랭킹으로 즐겨보세요!</div>
     <div class="desc" style="font-size:12.5px;margin-top:8px;">다른 참여자들과 순위를 비교하며 더 즐겁게 절약을 이어갈 수 있어요.</div>
   </div>
+  <img class="abs" src="images/arrow2.png" style="left:1016px;top:15130px;width:60px;height:66px;">
 
   <!-- ===================== 13. TOOLS & SKILLS (≈13790) ===================== -->
-  <img class="abs" src="images/ending_bg.png" style="left:0;top:13790px;width:1440px;height:772px;">
-  <div class="abs" style="left:297px;top:14059px;width:303px;display:grid;grid-template-columns:repeat(3,86px);gap:22px;">
+  <img class="abs" src="images/ending_bg.png" style="left:0;top:16190px;width:1440px;height:772px;">
+  <div class="abs" style="left:297px;top:16459px;width:303px;display:grid;grid-template-columns:repeat(3,86px);gap:22px;">
     <img src="images/tool_1.png" style="width:86px;height:86px;"><img src="images/tool_2.png" style="width:86px;height:86px;"><img src="images/tool_3.png" style="width:86px;height:86px;">
     <img src="images/tool_4.png" style="width:86px;height:86px;"><img src="images/tool_5.png" style="width:86px;height:86px;"><img src="images/tool_6.png" style="width:86px;height:86px;">
   </div>
-  <div class="abs center" style="left:349px;top:14288px;width:199px;font-size:15px;font-weight:500;color:#6f6d60;line-height:1.6;">Figma · Photoshop · Vercel<br>Claude · GitHub · Supabase</div>
-  <div class="abs" style="left:752px;top:13949px;width:1px;height:412px;background:#d6c8ac;"></div>
-  <div class="abs" style="left:859px;top:14056px;width:240px;font-weight:700;font-size:26px;color:#5a6149;line-height:2.05;">
+  <div class="abs center" style="left:349px;top:16688px;width:199px;font-size:15px;font-weight:500;color:#6f6d60;line-height:1.6;">Figma · Photoshop · Vercel<br>Claude · GitHub · Supabase</div>
+  <div class="abs" style="left:752px;top:16349px;width:1px;height:412px;background:#d6c8ac;"></div>
+  <div class="abs center" style="left:831px;top:16458px;width:280px;font-weight:600;font-size:25px;color:#5a6149;line-height:2.2;">
     UX/UI Design<br>Brand Identity<br>Marketing Planning<br>Visual Direction
   </div>
 
   <!-- ===================== 14. ENDING (≈14562) ===================== -->
-  <img class="abs" src="images/final_bg.png" style="left:0;top:14562px;width:1440px;height:1095px;">
-  <div class="abs center" style="left:464px;top:14723px;width:513px;font-weight:800;font-size:90px;color:#e3e6d6;letter-spacing:.02em;">THANK YOU</div>
-  <div class="abs center" style="left:651px;top:15511px;width:139px;font-weight:600;font-size:30px;color:#e3e6d6;">Jaringobi</div>
+  <img class="abs" src="images/final_bg.png" style="left:0;top:17162px;width:1440px;height:1095px;">
+  <div class="abs center" style="left:410px;top:17348px;width:620px;font-weight:800;font-size:78px;color:#e3e6d6;letter-spacing:.02em;white-space:nowrap;">THANK YOU</div>
+  <div class="abs center" style="left:651px;top:18133px;width:139px;font-weight:600;font-size:30px;color:#e3e6d6;">Jaringobi</div>
 
 </div>
+</div>
+<script>
+(function(){
+  var BASE=1440, MAX=1920/1440;            // ≈1.333
+  var stage=document.querySelector('.stage'), frame=document.getElementById('frame');
+  function fit(){
+    var w=document.documentElement.clientWidth;
+    var s=Math.min(w/BASE, MAX);
+    stage.style.transform='scale('+s+')';
+    frame.style.height=(stage.offsetHeight*s)+'px';   // 스케일된 높이만큼 영역 확보
+  }
+  window.addEventListener('resize',fit);
+  window.addEventListener('orientationchange',fit);
+  fit();
+})();
+</script>
 </body>
 </html>
